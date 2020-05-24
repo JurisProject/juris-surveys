@@ -7,9 +7,9 @@
      "type": "dropdown",
      "name": "question2",
      "choices": [
-      "item1",
-      "item2",
-      "item3"
+      "Choice 1",
+      "Choice 2",
+      "Choice 3"
      ]
     },
     {
