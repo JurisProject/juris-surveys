@@ -1,0 +1,578 @@
+{
+ "pages": [
+  {
+   "name": "Contact Information",
+   "elements": [
+    {
+     "type": "panel",
+     "name": "Your Info Panel",
+     "elements": [
+      {
+       "type": "text",
+       "name": "question1",
+       "title": "Your Name",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question2",
+       "title": "Your Address",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question3",
+       "title": "Zip Code",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question4",
+       "title": "Telephone Number",
+       "isRequired": true
+      }
+     ],
+     "title": "Your Information",
+     "isRequired": true
+    },
+    {
+     "type": "radiogroup",
+     "name": "iamdiscriminant",
+     "title": "Are you the person whom was discriminated against?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "item1",
+       "text": "Yes"
+      },
+      {
+       "value": "item2",
+       "text": "No"
+      }
+     ]
+    },
+    {
+     "type": "panel",
+     "name": "Discriminant Panel",
+     "elements": [
+      {
+       "type": "text",
+       "name": "question5",
+       "title": "Name",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question7",
+       "title": "Address",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question8",
+       "title": "Zip Code",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question9",
+       "title": "Telephone Number",
+       "isRequired": true
+      }
+     ],
+     "visibleIf": "{iamdiscriminant} = 'item2'",
+     "title": "Person who was discriminated against",
+     "isRequired": true
+    },
+    {
+     "type": "panel",
+     "name": "Agency Panel",
+     "elements": [
+      {
+       "type": "text",
+       "name": "question6",
+       "title": "Name",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question10",
+       "title": "Address",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question11",
+       "title": "Zip Code",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question12",
+       "title": "Telephone Number",
+       "isRequired": true
+      }
+     ],
+     "visibleIf": "{iamdiscriminant} = 'item2'",
+     "title": "Agency and department or program that discriminated:",
+     "isRequired": true
+    }
+   ],
+   "title": "Your Information"
+  },
+  {
+   "name": "Discrimination Type",
+   "elements": [
+    {
+     "type": "multipletext",
+     "name": "question13",
+     "title": "Non-employment",
+     "description": "Does your complaint concern discrimination in the delivery ofservices\nor in other discriminatory actions of the department or agency in its treatment of you or others?\nIf so, please indicate below the base(s) on which you believe these discriminatory actions were\ntaken.",
+     "items": [
+      {
+       "name": "raceethnicity",
+       "title": "Race/Ethnicity"
+      },
+      {
+       "name": "nationalorigin",
+       "title": "National Origin"
+      },
+      {
+       "name": "sex",
+       "title": "Sex"
+      },
+      {
+       "name": "religion",
+       "title": "Religion"
+      },
+      {
+       "name": "age",
+       "title": "Age"
+      },
+      {
+       "name": "disability",
+       "title": "Disability"
+      }
+     ]
+    },
+    {
+     "type": "multipletext",
+     "name": "Type of Discrimination",
+     "title": "Employment",
+     "description": "Does your complaint concern discrimination in employment by the department or agency? If so, please indicate below the base(s) on which you believe these discriminatory actions were taken.",
+     "items": [
+      {
+       "name": "raceethnicity",
+       "title": "Race/Ethnicity"
+      },
+      {
+       "name": "nationalorigin",
+       "title": "National Origin"
+      },
+      {
+       "name": "sex",
+       "title": "Sex"
+      },
+      {
+       "name": "religion",
+       "title": "Religion"
+      },
+      {
+       "name": "age",
+       "title": "Age"
+      },
+      {
+       "name": "disability",
+       "title": "Disability"
+      }
+     ]
+    }
+   ],
+   "title": "Type of Discrimination"
+  },
+  {
+   "name": "Contact",
+   "elements": [
+    {
+     "type": "text",
+     "name": "question14",
+     "title": "What is the most convenient time and place for us to contact you about this complaint?"
+    },
+    {
+     "type": "panel",
+     "name": "Representative Panel",
+     "elements": [
+      {
+       "type": "text",
+       "name": "question6",
+       "title": "Name",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question11",
+       "title": "Zip Code",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question12",
+       "title": "Telephone Number",
+       "isRequired": true
+      }
+     ],
+     "visibleIf": "{iamdiscriminant} = 'item2'",
+     "title": "Other Representative",
+     "description": "If we will not be able to reach you directly, you may wish to give us the name and phone\nnumber of a person who can tell us how to reach you and/or provide information about your\ncomplaint:",
+     "isRequired": true
+    },
+    {
+     "type": "panel",
+     "name": "panel1",
+     "elements": [
+      {
+       "type": "text",
+       "name": "question15",
+       "title": "Name",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question16",
+       "title": "Address",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question17",
+       "title": "Zip Code",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "question18",
+       "title": "Telephone Number",
+       "isRequired": true
+      }
+     ],
+     "visibleIf": "{iamdiscriminant} = 'item2'",
+     "title": "Your Attorney",
+     "description": "If we will not be able to reach you directly, you may wish to give us the name and phone\nnumber of a person who can tell us how to reach you and/or provide information about your\ncomplaint:",
+     "isRequired": true
+    }
+   ]
+  },
+  {
+   "name": "Discrimination Dates",
+   "elements": [
+    {
+     "type": "panel",
+     "name": "panel2",
+     "elements": [
+      {
+       "type": "text",
+       "name": "Earliest Discrimination Date",
+       "title": "Earliest date of discrimination:",
+       "isRequired": true,
+       "inputType": "datetime"
+      },
+      {
+       "type": "text",
+       "name": "Recent Date of Discrimination",
+       "title": "Most recent date of discrimination:",
+       "isRequired": true,
+       "inputType": "datetime"
+      }
+     ],
+     "title": "To your best recollection, on what date(s) did the alleged discrimination take place?"
+    },
+    {
+     "type": "comment",
+     "name": "question20",
+     "visibleIf": "{Recent Date of Discrimination} + 180 < Date",
+     "title": "Complaints of discrimination generally must be filed within 180 days of the alleged discrimination. If the most recent date of discrimination, listed above, is more than 180 days ago, you may request a waiver of the filing requirement. If you wish to request a waiver, please explain why you waited until now to file your complaint and FCS will evaluate the explanation and decide if a waiver is appropriate."
+    },
+    {
+     "type": "comment",
+     "name": "Event Explanation",
+     "title": "fPlease explain, as clearly and neatly as possible, what happened, why you believe it happened, and how you were discriminated against. Indicate who was involved. Be sure to include how other persons were treated differently from you. (Please use additional sheets if necessary and attach a copy of written materials pertaining to your case.)",
+     "isRequired": true
+    }
+   ]
+  },
+  {
+   "name": "Retaliation",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "isRetaliation",
+     "title": "Do you believe that you have been retaliated against (separate from the discrimination alleged on the last page)?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "item1",
+       "text": "Yes"
+      },
+      {
+       "value": "item2",
+       "text": "No"
+      }
+     ]
+    },
+    {
+     "type": "comment",
+     "name": "question21",
+     "visibleIf": "{isRetaliation} = 'item1'",
+     "title": "Please explain, as clearly and neatly as possible, the circumstances below. Be sure to explain what actions you took which you believe were the basis for the alleged retaliation.",
+     "isRequired": true,
+     "requiredIf": "{isRetaliation} = 'item1'"
+    }
+   ],
+   "title": "Is This a Retaliation?",
+   "description": "Title VI of the Civil Rights Acts of 1964, 42 U.S.C. §§ 2000d – 2000d7 and the nondiscrimination section of the Omnibus Crime Control and Safe Streets Act of 1968, 28 U.S.C.§ 3789d(c), prohibit recipients of Department of Justice funds from intimidating or retaliating against anyone because he or she has either taken action or participated in an action to secure rights protected by these laws"
+  },
+  {
+   "name": "Witnesses",
+   "elements": [
+    {
+     "type": "paneldynamic",
+     "name": "question19",
+     "title": "Witness",
+     "templateElements": [
+      {
+       "type": "text",
+       "name": "question22",
+       "title": "Name"
+      },
+      {
+       "type": "text",
+       "name": "question23",
+       "title": "Address"
+      },
+      {
+       "type": "text",
+       "name": "question24",
+       "title": "Phone Number"
+      }
+     ],
+     "maxPanelCount": 10
+    }
+   ],
+   "title": "Witnesses",
+   "description": "Please list below any persons (witnesses, fellow employees, supervisors, or others), if known, whom we may contact for additional information to support or clarify your complaint."
+  },
+  {
+   "name": "Other Info",
+   "elements": [
+    {
+     "type": "comment",
+     "name": "question25",
+     "title": "Other Information"
+    }
+   ],
+   "title": "Other Information",
+   "description": "Do you have any other information that you think is relevant to our investigation of your\nallegations?"
+  },
+  {
+   "name": "Remedy",
+   "elements": [
+    {
+     "type": "comment",
+     "name": "question26",
+     "title": "What remedy are you seeking for the alleged discrimination?"
+    },
+    {
+     "type": "radiogroup",
+     "name": "question27",
+     "title": "Have you (or the person discriminated against) filed the same or any other complaints with other offices of the Department of Justice (including the Office of Justice Programs, Federal Bureau of Investigation, etc.) or other Federal agencies?",
+     "choices": [
+      {
+       "value": "item1",
+       "text": "Yes"
+      },
+      {
+       "value": "item2",
+       "text": "No"
+      }
+     ]
+    },
+    {
+     "type": "panel",
+     "name": "panel3",
+     "elements": [
+      {
+       "type": "text",
+       "name": "question28",
+       "title": "Complaint Number"
+      },
+      {
+       "type": "text",
+       "name": "question29",
+       "title": "What agency and department or program was it filed with?"
+      },
+      {
+       "type": "text",
+       "name": "question30",
+       "title": "Agency Address"
+      },
+      {
+       "type": "text",
+       "name": "question31",
+       "title": "Agency Phone Number"
+      },
+      {
+       "type": "text",
+       "name": "question33",
+       "title": "Date of Filing",
+       "inputType": "datetime"
+      },
+      {
+       "type": "text",
+       "name": "question32",
+       "title": "Filed Against"
+      },
+      {
+       "type": "comment",
+       "name": "question34",
+       "title": "Complaint Details",
+       "description": "Briefly, what was the complaint about?"
+      },
+      {
+       "type": "comment",
+       "name": "question35",
+       "title": "Result",
+       "description": "What was the result?"
+      }
+     ],
+     "title": "Prior Complaint Information"
+    }
+   ],
+   "title": "Remedy"
+  },
+  {
+   "name": "Other Complaints",
+   "elements": [
+    {
+     "type": "checkbox",
+     "name": "question36",
+     "title": "Have you filed a charge or complaint concerning the matters raised in this complaint with any of the following?",
+     "hasOther": true,
+     "choices": [
+      {
+       "value": "item1",
+       "text": "U.S. Equal Employment Opportunity Commission"
+      },
+      {
+       "value": "item2",
+       "text": "Federal or State Court "
+      },
+      {
+       "value": "item3",
+       "text": "Your State or local Human Relations/Rights Commission"
+      },
+      {
+       "value": "item4",
+       "text": "Grievance or complaint office"
+      }
+     ]
+    },
+    {
+     "type": "paneldynamic",
+     "name": "question37",
+     "title": "Complaint Details",
+     "templateElements": [
+      {
+       "type": "text",
+       "name": "question38",
+       "title": "Agency"
+      },
+      {
+       "type": "text",
+       "name": "question39",
+       "title": "Date Filed"
+      },
+      {
+       "type": "text",
+       "name": "question40",
+       "title": "Case of Docket Number"
+      },
+      {
+       "type": "text",
+       "name": "question41",
+       "title": "Date of Trial/Hearing"
+      },
+      {
+       "type": "text",
+       "name": "question42",
+       "title": "Location of Agency/Court"
+      },
+      {
+       "type": "text",
+       "name": "question43",
+       "title": "Name of Investigator"
+      },
+      {
+       "type": "text",
+       "name": "question44",
+       "title": "Status of Case"
+      },
+      {
+       "type": "comment",
+       "name": "question45",
+       "title": "Comments"
+      }
+     ]
+    }
+   ],
+   "title": "Other Complaints"
+  },
+  {
+   "name": "Federal Funding",
+   "elements": [
+    {
+     "type": "comment",
+     "name": "question46",
+     "title": "While it is not necessary for you to know about aid that the agency or institution you are filing against receives from the Federal government, if you know of any Department of Justice funds or assistance received by the program or department in which the alleged discrimination occurred, please provide that information below."
+    }
+   ],
+   "title": "Federal Funding"
+  },
+  {
+   "name": "Consent Release Form",
+   "elements": [
+    {
+     "type": "html",
+     "name": "question48",
+     "html": "<em>Please read the information below, check the appropriate box, and sign this form.</em><br /><br />\n\n<blockquote>I have read the Notice of Investigatory Uses of Personal Information by the Department of Justice\n(DOJ). As a complainant, I understand that in the course of an investigation it may become necessary for\nDOJ to reveal my identity to persons at the organization or institution under investigation. I am also aware\nof the obligations of DOJ to honor requests under the Freedom of Information Act. I understand that it\nmay be necessary for DOJ to disclose information, including personally identifying details, that it has\ngathered as a part of its investigation of my complaint. In addition, I understand that as a complainant I\nam protected by DOJ’s regulations from intimidation or retaliation for having taken action or participated\nin action to secure rights protected by nondiscrimination statutes enforced by DOJ.</blockquote>"
+    },
+    {
+     "type": "radiogroup",
+     "name": "question49",
+     "choices": [
+      {
+       "value": "item1",
+       "text": "CONSENT"
+      },
+      {
+       "value": "item2",
+       "text": "CONSENT DENIED"
+      }
+     ]
+    }
+   ],
+   "title": "Consent Release Form",
+   "description": "We will need your consent to disclose your name, if necessary, in the course of any investigation. Therefore, we will need a signed Consent Form from you. (If you are filing this complaint for a person whom you allege has been discriminated against, we will in most instances need a signed Consent Form from that person.) See the \"Notice about Investigatory Uses of Personal Information\" for information about the Consent Form. "
+  },
+  {
+   "name": "Signature",
+   "elements": [
+    {
+     "type": "signaturepad",
+     "name": "question47",
+     "title": "Please sign this Complain"
+    }
+   ],
+   "title": "Signature"
+  }
+ ]
+}
