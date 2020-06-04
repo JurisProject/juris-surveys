@@ -11,25 +11,25 @@
      "elements": [
       {
        "type": "text",
-       "name": "question1",
+       "name": "yourName",
        "title": "Your Name",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question2",
+       "name": "yourAddress",
        "title": "Your Address",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question3",
+       "name": "yourZip",
        "title": "Zip Code",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question4",
+       "name": "yourPhone",
        "title": "Telephone Number",
        "isRequired": true
       }
@@ -39,16 +39,16 @@
     },
     {
      "type": "radiogroup",
-     "name": "iamdiscriminant",
+     "name": "iAmDiscriminant",
      "title": "Are you the person whom was discriminated against?",
      "isRequired": true,
      "choices": [
       {
-       "value": "item1",
+       "value": "yes",
        "text": "Yes"
       },
       {
-       "value": "item2",
+       "value": "no",
        "text": "No"
       }
      ]
@@ -59,30 +59,36 @@
      "elements": [
       {
        "type": "text",
-       "name": "question5",
+       "name": "discriminantName",
        "title": "Name",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question7",
+       "name": "discriminantAddress",
        "title": "Address",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question8",
+       "name": "discriminantZip",
        "title": "Zip Code",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question9",
+       "name": "discriminantPhone",
        "title": "Telephone Number",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "discriminantRelationship",
+       "title": "Please explain your relationship to this person(s).",
        "isRequired": true
       }
      ],
-     "visibleIf": "{iamdiscriminant} = 'item2'",
+     "visibleIf": "{iAmDiscriminant} = 'yes'",
      "title": "Person who was discriminated against",
      "isRequired": true
     },
@@ -92,35 +98,34 @@
      "elements": [
       {
        "type": "text",
-       "name": "question6",
+       "name": "discriminatingAgencyName",
        "title": "Name",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question10",
+       "name": "discriminatingAgencyAddress",
        "title": "Address",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question11",
+       "name": "discriminatingAgencyZip",
        "title": "Zip Code",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question12",
+       "name": "discriminatingAgencyPhone",
        "title": "Telephone Number",
        "isRequired": true
       }
      ],
-     "visibleIf": "{iamdiscriminant} = 'item2'",
      "title": "Agency and department or program that discriminated:",
      "isRequired": true
     }
    ],
-   "title": "Your Information"
+   "title": "Discriminating Agency Information"
   },
   {
    "name": "Discrimination Type",
@@ -132,27 +137,27 @@
      "description": "Does your complaint concern discrimination in the delivery ofservices\nor in other discriminatory actions of the department or agency in its treatment of you or others?\nIf so, please indicate below the base(s) on which you believe these discriminatory actions were\ntaken.",
      "items": [
       {
-       "name": "raceethnicity",
+       "name": "nonemploymentRaceEthnicity",
        "title": "Race/Ethnicity"
       },
       {
-       "name": "nationalorigin",
+       "name": "nonemploymentNationalOrigin",
        "title": "National Origin"
       },
       {
-       "name": "sex",
+       "name": "nonemploymentSex",
        "title": "Sex"
       },
       {
-       "name": "religion",
+       "name": "nonemploymentReligion",
        "title": "Religion"
       },
       {
-       "name": "age",
+       "name": "nonemploymentAge",
        "title": "Age"
       },
       {
-       "name": "disability",
+       "name": "nonemploymentDisability",
        "title": "Disability"
       }
      ]
@@ -164,27 +169,27 @@
      "description": "Does your complaint concern discrimination in employment by the department or agency? If so, please indicate below the base(s) on which you believe these discriminatory actions were taken.",
      "items": [
       {
-       "name": "raceethnicity",
+       "name": "employmentRaceEthnicity",
        "title": "Race/Ethnicity"
       },
       {
-       "name": "nationalorigin",
+       "name": "employmentNationalOrigin",
        "title": "National Origin"
       },
       {
-       "name": "sex",
+       "name": "employmentSex",
        "title": "Sex"
       },
       {
-       "name": "religion",
+       "name": "employmentReligion",
        "title": "Religion"
       },
       {
-       "name": "age",
+       "name": "employmentAge",
        "title": "Age"
       },
       {
-       "name": "disability",
+       "name": "employmentDisability",
        "title": "Disability"
       }
      ]
@@ -197,67 +202,65 @@
    "elements": [
     {
      "type": "text",
-     "name": "question14",
+     "name": "convenientContactTime",
      "title": "What is the most convenient time and place for us to contact you about this complaint?"
     },
     {
      "type": "panel",
-     "name": "Representative Panel",
+     "name": "Alternate Contact Panel",
      "elements": [
       {
        "type": "text",
-       "name": "question6",
+       "name": "alternateContactName",
        "title": "Name",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question11",
+       "name": "alternateContactZip",
        "title": "Zip Code",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question12",
+       "name": "alternateContactPhone",
        "title": "Telephone Number",
        "isRequired": true
       }
      ],
-     "visibleIf": "{iamdiscriminant} = 'item2'",
-     "title": "Other Representative",
+     "title": "Alternate Contact",
      "description": "If we will not be able to reach you directly, you may wish to give us the name and phone\nnumber of a person who can tell us how to reach you and/or provide information about your\ncomplaint:",
      "isRequired": true
     },
     {
      "type": "panel",
-     "name": "panel1",
+     "name": "Attorney Panel",
      "elements": [
       {
        "type": "text",
-       "name": "question15",
+       "name": "attorneyName",
        "title": "Name",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question16",
+       "name": "attorneyAddress",
        "title": "Address",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question17",
+       "name": "attorneyZip",
        "title": "Zip Code",
        "isRequired": true
       },
       {
        "type": "text",
-       "name": "question18",
+       "name": "attorneyPhone",
        "title": "Telephone Number",
        "isRequired": true
       }
      ],
-     "visibleIf": "{iamdiscriminant} = 'item2'",
      "title": "Your Attorney",
      "description": "If we will not be able to reach you directly, you may wish to give us the name and phone\nnumber of a person who can tell us how to reach you and/or provide information about your\ncomplaint:",
      "isRequired": true
@@ -268,19 +271,19 @@
    "name": "Discrimination Dates",
    "elements": [
     {
-     "type": "panel",
+     "type": "Discrimination Dates",
      "name": "panel2",
      "elements": [
       {
        "type": "text",
-       "name": "Earliest Discrimination Date",
+       "name": "earliestDiscriminationDate",
        "title": "Earliest date of discrimination:",
        "isRequired": true,
        "inputType": "datetime"
       },
       {
        "type": "text",
-       "name": "Recent Date of Discrimination",
+       "name": "latestDiscriminationDate",
        "title": "Most recent date of discrimination:",
        "isRequired": true,
        "inputType": "datetime"
@@ -290,14 +293,14 @@
     },
     {
      "type": "comment",
-     "name": "question20",
-     "visibleIf": "{Recent Date of Discrimination} + 180 < Date",
+     "name": "delayedFilingExplanation",
+     "visibleIf": "{latestDiscriminationDate} + 180 < Date",
      "title": "Complaints of discrimination generally must be filed within 180 days of the alleged discrimination. If the most recent date of discrimination, listed above, is more than 180 days ago, you may request a waiver of the filing requirement. If you wish to request a waiver, please explain why you waited until now to file your complaint and FCS will evaluate the explanation and decide if a waiver is appropriate."
     },
     {
      "type": "comment",
-     "name": "Event Explanation",
-     "title": "fPlease explain, as clearly and neatly as possible, what happened, why you believe it happened, and how you were discriminated against. Indicate who was involved. Be sure to include how other persons were treated differently from you. (Please use additional sheets if necessary and attach a copy of written materials pertaining to your case.)",
+     "name": "eventDescription",
+     "title": "Please explain, as clearly and neatly as possible, what happened, why you believe it happened, and how you were discriminated against. Indicate who was involved. Be sure to include how other persons were treated differently from you. (Please use additional sheets if necessary and attach a copy of written materials pertaining to your case.)",
      "isRequired": true
     }
    ]
@@ -312,22 +315,22 @@
      "isRequired": true,
      "choices": [
       {
-       "value": "item1",
+       "value": "yes",
        "text": "Yes"
       },
       {
-       "value": "item2",
+       "value": "no",
        "text": "No"
       }
      ]
     },
     {
      "type": "comment",
-     "name": "question21",
-     "visibleIf": "{isRetaliation} = 'item1'",
+     "name": "retaliationExplanation",
+     "visibleIf": "{isRetaliation} = 'yes'",
      "title": "Please explain, as clearly and neatly as possible, the circumstances below. Be sure to explain what actions you took which you believe were the basis for the alleged retaliation.",
      "isRequired": true,
-     "requiredIf": "{isRetaliation} = 'item1'"
+     "requiredIf": "{isRetaliation} = 'yes'"
     }
    ],
    "title": "Is This a Retaliation?",
@@ -338,22 +341,22 @@
    "elements": [
     {
      "type": "paneldynamic",
-     "name": "question19",
+     "name": "Witness Panel",
      "title": "Witness",
      "templateElements": [
       {
        "type": "text",
-       "name": "question22",
+       "name": "name",
        "title": "Name"
       },
       {
        "type": "text",
-       "name": "question23",
+       "name": "address",
        "title": "Address"
       },
       {
        "type": "text",
-       "name": "question24",
+       "name": "phone",
        "title": "Phone Number"
       }
      ],
@@ -370,7 +373,7 @@
    "elements": [
     {
      "type": "comment",
-     "name": "question25",
+     "name": "otherInformation",
      "title": "Other Information"
     }
    ],
@@ -387,7 +390,7 @@
     },
     {
      "type": "radiogroup",
-     "name": "Has Filed Same Complaint",
+     "name": "hasFiledSameComplaint",
      "title": "Have you (or the person discriminated against) filed the same or any other complaints with other offices of the Department of Justice (including the Office of Justice Programs, Federal Bureau of Investigation, etc.) or other Federal agencies?",
      "isRequired": true,
      "choices": [
@@ -403,53 +406,53 @@
     },
     {
      "type": "panel",
-     "name": "panel3",
+     "name": "Other Complaints Details",
      "elements": [
       {
        "type": "text",
-       "name": "question28",
+       "name": "otherOfficeComplaintNumber",
        "title": "Complaint Number"
       },
       {
        "type": "text",
-       "name": "question29",
+       "name": "otherOfficeName",
        "title": "What agency and department or program was it filed with?"
       },
       {
        "type": "text",
-       "name": "question30",
+       "name": "otherOfficeAddress",
        "title": "Agency Address"
       },
       {
        "type": "text",
-       "name": "question31",
+       "name": "otherOfficePhone",
        "title": "Agency Phone Number"
       },
       {
        "type": "text",
-       "name": "question33",
+       "name": "otherOfficeDateOfFiling",
        "title": "Date of Filing",
        "inputType": "datetime"
       },
       {
        "type": "text",
-       "name": "question32",
+       "name": "otherOfficeFiledAgainst",
        "title": "Filed Against"
       },
       {
        "type": "comment",
-       "name": "question34",
+       "name": "otherOfficeComplaintDetails",
        "title": "Complaint Details",
        "description": "Briefly, what was the complaint about?"
       },
       {
        "type": "comment",
-       "name": "question35",
+       "name": "otherOfficeComplaintResult",
        "title": "Result",
        "description": "What was the result?"
       }
      ],
-     "visibleIf": "{Has Filed Same Complaint} = 'yes'",
+     "visibleIf": "{hasFiledSameComplaint} = 'yes'",
      "title": "Prior Complaint Information"
     }
    ],
@@ -460,24 +463,24 @@
    "elements": [
     {
      "type": "checkbox",
-     "name": "Has Filed Other Complaint",
+     "name": "hasFiledOtherComplaints",
      "title": "Have you filed a charge or complaint concerning the matters raised in this complaint with any of the following?",
      "hasOther": true,
      "choices": [
       {
-       "value": "item1",
+       "value": "USEqualEmploymentOpportunityCommission",
        "text": "U.S. Equal Employment Opportunity Commission"
       },
       {
-       "value": "item2",
+       "value": "FederalOrStateCourt",
        "text": "Federal or State Court "
       },
       {
-       "value": "item3",
+       "value": "StateOrLocalHumanRelationsRightCommission",
        "text": "Your State or local Human Relations/Rights Commission"
       },
       {
-       "value": "item4",
+       "value": "GrievanceOrComplaintOffice",
        "text": "Grievance or complaint office"
       }
      ]
@@ -489,42 +492,42 @@
      "templateElements": [
       {
        "type": "text",
-       "name": "question38",
+       "name": "name",
        "title": "Agency"
       },
       {
        "type": "text",
-       "name": "question39",
+       "name": "dateFiled",
        "title": "Date Filed"
       },
       {
        "type": "text",
-       "name": "question40",
+       "name": "caseNumber",
        "title": "Case of Docket Number"
       },
       {
        "type": "text",
-       "name": "question41",
+       "name": "trialDate",
        "title": "Date of Trial/Hearing"
       },
       {
        "type": "text",
-       "name": "question42",
+       "name": "courtLocation",
        "title": "Location of Agency/Court"
       },
       {
        "type": "text",
-       "name": "question43",
+       "name": "investigatorName",
        "title": "Name of Investigator"
       },
       {
        "type": "text",
-       "name": "question44",
+       "name": "caseStatus",
        "title": "Status of Case"
       },
       {
        "type": "comment",
-       "name": "question45",
+       "name": "comments",
        "title": "Comments"
       }
      ],
@@ -539,7 +542,7 @@
    "elements": [
     {
      "type": "comment",
-     "name": "question46",
+     "name": "federalFunding",
      "title": "While it is not necessary for you to know about aid that the agency or institution you are filing against receives from the Federal government, if you know of any Department of Justice funds or assistance received by the program or department in which the alleged discrimination occurred, please provide that information below."
     }
    ],
@@ -576,7 +579,7 @@
    "elements": [
     {
      "type": "signaturepad",
-     "name": "question47",
+     "name": "signature",
      "title": "Please sign this Complain"
     }
    ],
