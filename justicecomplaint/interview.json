@@ -294,7 +294,7 @@
     {
      "type": "comment",
      "name": "delayedFilingExplanation",
-     "visibleIf": "{latestDiscriminationDate} + 180 < Date",
+     "visibleIf": "{latestDiscriminationDate} + (180*24*60*60*1000) < {Date.now()}",
      "title": "Complaints of discrimination generally must be filed within 180 days of the alleged discrimination. If the most recent date of discrimination, listed above, is more than 180 days ago, you may request a waiver of the filing requirement. If you wish to request a waiver, please explain why you waited until now to file your complaint and FCS will evaluate the explanation and decide if a waiver is appropriate."
     },
     {
@@ -385,7 +385,7 @@
    "elements": [
     {
      "type": "comment",
-     "name": "question26",
+     "name": "remedy",
      "title": "What remedy are you seeking for the alleged discrimination?"
     },
     {
