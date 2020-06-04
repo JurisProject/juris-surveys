@@ -1,4 +1,6 @@
 {
+ "title": "Complaint Form",
+ "description": "The purpose of this form is to assist you in filing a complaint with the Federal Coordination and\nCompliance Section (FCS). You are not required to use this form; a letter with the same\ninformation is sufficient. However, the information requested in the items marked with a star (*)\nmust be provided if you submit something other than this form. ",
  "pages": [
   {
    "name": "Contact Information",
@@ -355,7 +357,9 @@
        "title": "Phone Number"
       }
      ],
-     "maxPanelCount": 10
+     "panelCount": 1,
+     "minPanelCount": 1,
+     "maxPanelCount": 70
     }
    ],
    "title": "Witnesses",
@@ -383,15 +387,16 @@
     },
     {
      "type": "radiogroup",
-     "name": "question27",
+     "name": "Has Filed Same Complaint",
      "title": "Have you (or the person discriminated against) filed the same or any other complaints with other offices of the Department of Justice (including the Office of Justice Programs, Federal Bureau of Investigation, etc.) or other Federal agencies?",
+     "isRequired": true,
      "choices": [
       {
-       "value": "item1",
+       "value": "yes",
        "text": "Yes"
       },
       {
-       "value": "item2",
+       "value": "no",
        "text": "No"
       }
      ]
@@ -444,6 +449,7 @@
        "description": "What was the result?"
       }
      ],
+     "visibleIf": "{Has Filed Same Complaint} = 'yes'",
      "title": "Prior Complaint Information"
     }
    ],
@@ -454,7 +460,7 @@
    "elements": [
     {
      "type": "checkbox",
-     "name": "question36",
+     "name": "Has Filed Other Complaint",
      "title": "Have you filed a charge or complaint concerning the matters raised in this complaint with any of the following?",
      "hasOther": true,
      "choices": [
@@ -478,7 +484,7 @@
     },
     {
      "type": "paneldynamic",
-     "name": "question37",
+     "name": "Other Complaint Details",
      "title": "Complaint Details",
      "templateElements": [
       {
@@ -521,7 +527,9 @@
        "name": "question45",
        "title": "Comments"
       }
-     ]
+     ],
+     "panelCount": 1,
+     "minPanelCount": 1
     }
    ],
    "title": "Other Complaints"
@@ -547,14 +555,14 @@
     },
     {
      "type": "radiogroup",
-     "name": "question49",
+     "name": "Release Consent",
      "choices": [
       {
-       "value": "item1",
+       "value": "consent",
        "text": "CONSENT"
       },
       {
-       "value": "item2",
+       "value": "notconsent",
        "text": "CONSENT DENIED"
       }
      ]
@@ -574,5 +582,6 @@
    ],
    "title": "Signature"
   }
- ]
+ ],
+ "showPageNumbers": true
 }
