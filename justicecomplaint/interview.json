@@ -88,7 +88,7 @@
        "isRequired": true
       }
      ],
-     "visibleIf": "{iAmDiscriminant} = 'yes'",
+     "visibleIf": "{iAmDiscriminant} = 'no'",
      "title": "Person who was discriminated against",
      "isRequired": true
     },
