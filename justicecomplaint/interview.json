@@ -131,8 +131,25 @@
    "name": "Discrimination Type",
    "elements": [
     {
+     "type": "radiogroup",
+     "name": "discriminationType",
+     "title": "What kind of discrimination did you experience?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "nonemployment",
+       "text": "Non-employment"
+      },
+      {
+       "value": "employment",
+       "text": "Employment"
+      }
+     ]
+    },
+    {
      "type": "multipletext",
      "name": "question13",
+     "visibleIf": "{discriminationType} = 'nonemployment'",
      "title": "Non-employment",
      "description": "Does your complaint concern discrimination in the delivery ofservices\nor in other discriminatory actions of the department or agency in its treatment of you or others?\nIf so, please indicate below the base(s) on which you believe these discriminatory actions were\ntaken.",
      "items": [
@@ -165,6 +182,7 @@
     {
      "type": "multipletext",
      "name": "Type of Discrimination",
+     "visibleIf": "{discriminationType} = 'employment'",
      "title": "Employment",
      "description": "Does your complaint concern discrimination in employment by the department or agency? If so, please indicate below the base(s) on which you believe these discriminatory actions were taken.",
      "items": [
@@ -271,31 +289,27 @@
    "name": "Discrimination Dates",
    "elements": [
     {
-     "type": "Discrimination Dates",
-     "name": "panel2",
-     "elements": [
-      {
-       "type": "text",
-       "name": "earliestDiscriminationDate",
-       "title": "Earliest date of discrimination:",
-       "isRequired": true,
-       "inputType": "datetime"
-      },
-      {
-       "type": "text",
-       "name": "latestDiscriminationDate",
-       "title": "Most recent date of discrimination:",
-       "isRequired": true,
-       "inputType": "datetime"
-      }
-     ],
-     "title": "To your best recollection, on what date(s) did the alleged discrimination take place?"
+     "type": "text",
+     "name": "earliestDiscriminationDate",
+     "title": "Earliest Date of Discrimination",
+     "isRequired": true,
+     "inputType": "date",
+     "max": "2999-12-31"
+    },
+    {
+     "type": "text",
+     "name": "latestDiscriminationDate",
+     "title": "Earliest Date of Discrimination",
+     "isRequired": true,
+     "inputType": "date",
+     "max": 2999
     },
     {
      "type": "comment",
      "name": "delayedFilingExplanation",
      "visibleIf": "{latestDiscriminationDate} + (180*24*60*60*1000) < {Date.now()}",
-     "title": "Complaints of discrimination generally must be filed within 180 days of the alleged discrimination. If the most recent date of discrimination, listed above, is more than 180 days ago, you may request a waiver of the filing requirement. If you wish to request a waiver, please explain why you waited until now to file your complaint and FCS will evaluate the explanation and decide if a waiver is appropriate."
+     "title": "Delayed Filing Explanation",
+     "description": "Complaints of discrimination generally must be filed within 180 days of the alleged discrimination. If the most recent date of discrimination, listed above, is more than 180 days ago, you may request a waiver of the filing requirement. If you wish to request a waiver, please explain why you waited until now to file your complaint and FCS will evaluate the explanation and decide if a waiver is appropriate."
     },
     {
      "type": "comment",
@@ -303,7 +317,8 @@
      "title": "Please explain, as clearly and neatly as possible, what happened, why you believe it happened, and how you were discriminated against. Indicate who was involved. Be sure to include how other persons were treated differently from you. (Please use additional sheets if necessary and attach a copy of written materials pertaining to your case.)",
      "isRequired": true
     }
-   ]
+   ],
+   "title": "Dates of Occurence"
   },
   {
    "name": "Retaliation",
