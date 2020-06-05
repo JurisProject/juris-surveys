@@ -88,7 +88,7 @@
        "isRequired": true
       }
      ],
-     "visibleIf": "{iAmDiscriminant} = 'no'",
+     "visibleIf": "{iAmDiscriminant} = 'yes'",
      "title": "Person who was discriminated against",
      "isRequired": true
     },
@@ -230,25 +230,21 @@
       {
        "type": "text",
        "name": "alternateContactName",
-       "title": "Name",
-       "isRequired": true
+       "title": "Name"
       },
       {
        "type": "text",
        "name": "alternateContactZip",
-       "title": "Zip Code",
-       "isRequired": true
+       "title": "Zip Code"
       },
       {
        "type": "text",
        "name": "alternateContactPhone",
-       "title": "Telephone Number",
-       "isRequired": true
+       "title": "Telephone Number"
       }
      ],
      "title": "Alternate Contact",
-     "description": "If we will not be able to reach you directly, you may wish to give us the name and phone\nnumber of a person who can tell us how to reach you and/or provide information about your\ncomplaint:",
-     "isRequired": true
+     "description": "If we will not be able to reach you directly, you may wish to give us the name and phone\nnumber of a person who can tell us how to reach you and/or provide information about your\ncomplaint:"
     },
     {
      "type": "panel",
@@ -257,31 +253,26 @@
       {
        "type": "text",
        "name": "attorneyName",
-       "title": "Name",
-       "isRequired": true
+       "title": "Name"
       },
       {
        "type": "text",
        "name": "attorneyAddress",
-       "title": "Address",
-       "isRequired": true
+       "title": "Address"
       },
       {
        "type": "text",
        "name": "attorneyZip",
-       "title": "Zip Code",
-       "isRequired": true
+       "title": "Zip Code"
       },
       {
        "type": "text",
        "name": "attorneyPhone",
-       "title": "Telephone Number",
-       "isRequired": true
+       "title": "Telephone Number"
       }
      ],
      "title": "Your Attorney",
-     "description": "If we will not be able to reach you directly, you may wish to give us the name and phone\nnumber of a person who can tell us how to reach you and/or provide information about your\ncomplaint:",
-     "isRequired": true
+     "description": "If we will not be able to reach you directly, you may wish to give us the name and phone\nnumber of a person who can tell us how to reach you and/or provide information about your\ncomplaint:"
     }
    ]
   },
@@ -294,7 +285,7 @@
      "title": "Earliest Date of Discrimination",
      "isRequired": true,
      "inputType": "date",
-     "max": "2999-12-31"
+     "max": 2999
     },
     {
      "type": "text",
