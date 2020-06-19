@@ -1,4 +1,6 @@
 {
+ "title": "Test Interview",
+ "description": "This is a test of juris-builder",
  "pages": [
   {
    "name": "page1",
