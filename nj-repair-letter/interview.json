@@ -240,6 +240,7 @@
      ]
     }
    ],
+   "visibleIf": "{user_qualifies} <> false",
    "title": "Problem Details",
    "description": "Please indicate what type of issues the rental has."
   },
@@ -268,11 +269,13 @@
      ]
     }
    ],
+   "visibleIf": "{user_qualifies} <> false",
    "title": "Issues",
    "description": "Now you'll list the issues in the rental, the room they're in, and how long they've been a problem. Make sure to list all issues you're experiencing in the rental."
   },
   {
    "name": "issue_communication",
+   "visibleIf": "{user_qualifies} <> false",
    "elements": [
     {
      "type": "radiogroup",
@@ -331,6 +334,7 @@
   },
   {
    "name": "remedy",
+   "visibleIf": "{user_qualifies} <> false",
    "elements": [
     {
      "type": "radiogroup",
@@ -382,6 +386,7 @@
   },
   {
    "name": "landlord",
+   "visibleIf": "{user_qualifies} <> false",
    "elements": [
     {
      "type": "text",
@@ -451,6 +456,7 @@
   },
   {
    "name": "mailing_address",
+   "visibleIf": "{user_qualifies} <> false",
    "elements": [
     {
      "type": "panel",
@@ -495,6 +501,7 @@
   },
   {
    "name": "Signature",
+   "visibleIf": "{user_qualifies} <> false",
    "elements": [
     {
      "type": "signaturepad",
