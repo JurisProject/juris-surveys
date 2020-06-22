@@ -1,0 +1,510 @@
+{
+ "title": "NJ Repair Letter",
+ "description": "This letter will help get your rental fixed.",
+ "pages": [
+  {
+   "name": "qualification",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "payments_good",
+     "title": "Are you up to date on all your rent and utilities payments?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "yes",
+       "text": "Yes"
+      },
+      {
+       "value": "no",
+       "text": "No"
+      }
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "cause_of_problem",
+     "title": "Did you, your family, or your guest cause the problem with the rental that needs repair?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "yes",
+       "text": "Yes"
+      },
+      {
+       "value": "no",
+       "text": "No"
+      }
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "refuse_entry",
+     "title": "Have you refused to allow the landlord to enter to make repairs?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "yes",
+       "text": "Yes"
+      },
+      {
+       "value": "no",
+       "text": "No"
+      }
+     ]
+    },
+    {
+     "type": "expression",
+     "name": "user_qualifies",
+     "visible": false,
+     "expression": "{payments_good} = 'yes' and {cause_of_problem} = 'no' and {refuse_entry} = 'no'",
+     "commentText": "Other (describe)"
+    }
+   ],
+   "title": "Qualification",
+   "description": "Lets see if this letter can help you out."
+  },
+  {
+   "name": "personal",
+   "elements": [
+    {
+     "type": "text",
+     "name": "firstname",
+     "title": "First Name",
+     "isRequired": true
+    },
+    {
+     "type": "text",
+     "name": "lastname",
+     "title": "Last Name",
+     "isRequired": true
+    }
+   ],
+   "visibleIf": "{user_qualifies} <> false",
+   "title": "Personal Information"
+  },
+  {
+   "name": "property",
+   "elements": [
+    {
+     "type": "text",
+     "name": "address_line1",
+     "title": "Address Line 1",
+     "isRequired": true
+    },
+    {
+     "type": "text",
+     "name": "address_line2",
+     "title": "Address Line 2"
+    },
+    {
+     "type": "text",
+     "name": "address_city",
+     "title": "City",
+     "isRequired": true
+    },
+    {
+     "type": "text",
+     "name": "address_state",
+     "startWithNewLine": false,
+     "title": "State",
+     "isRequired": true
+    },
+    {
+     "type": "text",
+     "name": "address_zip",
+     "startWithNewLine": false,
+     "title": "Zip",
+     "isRequired": true
+    }
+   ],
+   "visibleIf": "{user_qualifies} <> false",
+   "title": "Property Information",
+   "description": "What's the address of the property you're renting?"
+  },
+  {
+   "name": "tenancy",
+   "elements": [
+    {
+     "type": "dropdown",
+     "name": "occupants",
+     "title": "Who, if anyone, do you live with?",
+     "choices": [
+      {
+       "value": "item1",
+       "text": "No one else"
+      },
+      {
+       "value": "item2",
+       "text": "A Partner"
+      },
+      {
+       "value": "item3",
+       "text": "Family"
+      },
+      {
+       "value": "item4",
+       "text": "A Friend"
+      },
+      {
+       "value": "item5",
+       "text": "Multiple Friends"
+      }
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "more_than_two_units",
+     "title": "Does the building you live in have more than two units?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "item1",
+       "text": "Yes"
+      },
+      {
+       "value": "item2",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "visibleIf": "{user_qualifies} <> false",
+   "title": "Tenant Information"
+  },
+  {
+   "name": "problem",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "no_heat",
+     "title": "Is one issue that you don't have heat in the rental?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "yes",
+       "text": "Yes"
+      },
+      {
+       "value": "no",
+       "text": "No"
+      }
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "conditions_dangerous",
+     "title": "Are the conditions in your rental defective, unlivable, and/or dangerous?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "yes",
+       "text": "Yes"
+      },
+      {
+       "value": "no",
+       "text": "No"
+      }
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "health_risk",
+     "title": "Does the condition of your rental create a risk to your health?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "yes",
+       "text": "Yes"
+      },
+      {
+       "value": "no",
+       "text": "No"
+      }
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "lead_paint",
+     "title": "Do you have reason to think that there may be lead paint in the rental?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "yes",
+       "text": "Yes"
+      },
+      {
+       "value": "no",
+       "text": "No"
+      }
+     ]
+    }
+   ],
+   "title": "Problem Details",
+   "description": "Please indicate what type of issues the rental has."
+  },
+  {
+   "name": "issues_list",
+   "elements": [
+    {
+     "type": "paneldynamic",
+     "name": "issues",
+     "templateElements": [
+      {
+       "type": "comment",
+       "name": "issue_description",
+       "title": "Issue Description"
+      },
+      {
+       "type": "text",
+       "name": "issue_location",
+       "title": "Issue Location"
+      },
+      {
+       "type": "text",
+       "name": "issue_duration",
+       "title": "Issue Duration"
+      }
+     ]
+    }
+   ],
+   "title": "Issues",
+   "description": "Now you'll list the issues in the rental, the room they're in, and how long they've been a problem. Make sure to list all issues you're experiencing in the rental."
+  },
+  {
+   "name": "issue_communication",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "was_previous_notice",
+     "title": "Have you already made the landlord aware of these issues?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "yes",
+       "text": "Yes"
+      },
+      {
+       "value": "no",
+       "text": "No"
+      }
+     ]
+    },
+    {
+     "type": "checkbox",
+     "name": "question2",
+     "visibleIf": "{was_previous_notice} = 'yes'",
+     "title": "How have you contacted the landlord about these issues?",
+     "isRequired": true,
+     "hasOther": true,
+     "choices": [
+      {
+       "value": "item1",
+       "text": "By phone call"
+      },
+      {
+       "value": "item2",
+       "text": "By texting"
+      },
+      {
+       "value": "item3",
+       "text": "By email"
+      },
+      {
+       "value": "item4",
+       "text": "In Person"
+      }
+     ],
+     "otherText": "Add other"
+    },
+    {
+     "type": "text",
+     "name": "question1",
+     "visibleIf": "{was_previous_notice} = 'yes'",
+     "title": "How many times would you estimate you've communicated with the landlord about these issues?",
+     "isRequired": true,
+     "inputType": "number",
+     "min": "0",
+     "step": 1
+    }
+   ]
+  },
+  {
+   "name": "remedy",
+   "elements": [
+    {
+     "type": "radiogroup",
+     "name": "add_litigation",
+     "title": "How would you like to phrase this part?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "prepared_to_sue",
+       "text": "\"If you do not make these repairs, I am prepared to sue you in Small Claims Court.\""
+      },
+      {
+       "value": "forced_to_sue",
+       "text": "\"If you do not make these repairs, I will be forced to sue you in Small Claims Court.\""
+      },
+      {
+       "value": "will_sue",
+       "text": "\"If you do not make these repairs, I will sue you in Small Claims Court.\""
+      }
+     ]
+    },
+    {
+     "type": "radiogroup",
+     "name": "add_deadline",
+     "title": "Want to give a deadline to comply with your demands?",
+     "description": "The law often imposes deadlines, and this might motivate the landlord to make the repairs faster.",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "yes",
+       "text": "Yes"
+      },
+      {
+       "value": "no",
+       "text": "No"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "name": "number_of_days",
+     "title": "How made days do you want to give ${landlord_name} to comply with your demands?",
+     "isRequired": true,
+     "inputType": "number"
+    }
+   ],
+   "title": "Remedies",
+   "description": "If the landlord does not make these repairs, your next option is to sue. It's important to make this clear to the landlord"
+  },
+  {
+   "name": "landlord",
+   "elements": [
+    {
+     "type": "text",
+     "name": "landlord_name",
+     "title": "What's your landlord's name?",
+     "description": "This could be an individual's full name or a company's name.",
+     "isRequired": true
+    },
+    {
+     "type": "radiogroup",
+     "name": "know_landlord_address",
+     "title": "Do you know you landlord's mailing address?",
+     "isRequired": true,
+     "choices": [
+      {
+       "value": "yes",
+       "text": "Yes"
+      },
+      {
+       "value": "no",
+       "text": "No"
+      }
+     ]
+    },
+    {
+     "type": "panel",
+     "name": "panel2",
+     "elements": [
+      {
+       "type": "text",
+       "name": "landlord_address_line1",
+       "title": "Address Line 1",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "landlord_address_line2",
+       "title": "Address Line 2"
+      },
+      {
+       "type": "text",
+       "name": "landlord_address_city",
+       "title": "City",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "landlord_address_state",
+       "startWithNewLine": false,
+       "title": "State",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "landlord_address_zip",
+       "startWithNewLine": false,
+       "title": "Zip Code",
+       "isRequired": true
+      }
+     ],
+     "visibleIf": "{know_landlord_address} = 'yes'",
+     "title": "Landlord's Address"
+    }
+   ],
+   "visibleIf": "{user_qualifies} <> false",
+   "title": "Landlord Information"
+  },
+  {
+   "name": "mailing_address",
+   "elements": [
+    {
+     "type": "panel",
+     "name": "panel1",
+     "elements": [
+      {
+       "type": "text",
+       "name": "mailing_address_line1",
+       "title": "Address Line 1",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "mailing_address_line2",
+       "title": "Address Line 2"
+      },
+      {
+       "type": "text",
+       "name": "mailing_address_city",
+       "title": "City",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "mailing_address_state",
+       "startWithNewLine": false,
+       "title": "State",
+       "isRequired": true
+      },
+      {
+       "type": "text",
+       "name": "mailing_address_zip",
+       "startWithNewLine": false,
+       "title": "Zip Code",
+       "isRequired": true
+      }
+     ],
+     "title": "Alright, the body is drafted! What's your current mailing address?"
+    }
+   ],
+   "title": "Your Mailing Address"
+  },
+  {
+   "name": "Signature",
+   "elements": [
+    {
+     "type": "signaturepad",
+     "name": "user_signature",
+     "title": "Signature",
+     "isRequired": true
+    }
+   ],
+   "title": "Signature",
+   "description": "Last part! Please sign your letter."
+  }
+ ]
+}
