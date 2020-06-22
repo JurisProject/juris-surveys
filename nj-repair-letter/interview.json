@@ -275,7 +275,6 @@
   },
   {
    "name": "issue_communication",
-   "visibleIf": "{user_qualifies} <> false",
    "elements": [
     {
      "type": "radiogroup",
@@ -330,11 +329,11 @@
      "min": "0",
      "step": 1
     }
-   ]
+   ],
+   "visibleIf": "{user_qualifies} <> false"
   },
   {
    "name": "remedy",
-   "visibleIf": "{user_qualifies} <> false",
    "elements": [
     {
      "type": "radiogroup",
@@ -376,17 +375,18 @@
     {
      "type": "text",
      "name": "number_of_days",
+     "visibleIf": "{add_deadline} = 'yes'",
      "title": "How made days do you want to give ${landlord_name} to comply with your demands?",
      "isRequired": true,
      "inputType": "number"
     }
    ],
+   "visibleIf": "{user_qualifies} <> false",
    "title": "Remedies",
    "description": "If the landlord does not make these repairs, your next option is to sue. It's important to make this clear to the landlord"
   },
   {
    "name": "landlord",
-   "visibleIf": "{user_qualifies} <> false",
    "elements": [
     {
      "type": "text",
@@ -456,7 +456,6 @@
   },
   {
    "name": "mailing_address",
-   "visibleIf": "{user_qualifies} <> false",
    "elements": [
     {
      "type": "panel",
@@ -497,11 +496,11 @@
      "title": "Alright, the body is drafted! What's your current mailing address?"
     }
    ],
+   "visibleIf": "{user_qualifies} <> false",
    "title": "Your Mailing Address"
   },
   {
    "name": "Signature",
-   "visibleIf": "{user_qualifies} <> false",
    "elements": [
     {
      "type": "signaturepad",
@@ -510,6 +509,7 @@
      "isRequired": true
     }
    ],
+   "visibleIf": "{user_qualifies} <> false",
    "title": "Signature",
    "description": "Last part! Please sign your letter."
   }
