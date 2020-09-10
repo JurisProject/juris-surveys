@@ -10,4 +10,6 @@ U.S. Department of Justice
 Washington, D.C.  20530
 
 ## Current Interview
-You can run this interview by visiting the following link: http://staging.getjuris.com/surveyjs?surveyfile=https://raw.githubusercontent.com/konstantinbrazhnik/juris-surveys/master/justicecomplaint/interview.json
+You can run this interview by visiting the following link: https://builder.getjuris.com/run?i=https://raw.githubusercontent.com/konstantinbrazhnik/juris-surveys/master/justicecomplaint/interview.json&o=https://raw.githubusercontent.com/JurisProject/juris-surveys/master/justicecomplaint/output.md
+
+Or debug it here: https://builder.getjuris.com/builder?i=https://raw.githubusercontent.com/konstantinbrazhnik/juris-surveys/master/justicecomplaint/interview.json&o=https://raw.githubusercontent.com/JurisProject/juris-surveys/master/justicecomplaint/output.md
